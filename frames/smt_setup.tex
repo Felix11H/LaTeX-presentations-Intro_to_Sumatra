@@ -1,0 +1,54 @@
+\begin{frame}[fragile]{Sumatra Installation (Version 0.6.0)}
+
+  \vspace{0.2cm}
+  Install globally (Ubuntu):
+  \vspace{0.15cm}
+  \begin{mlineshell}
+    sudo apt-get install python-pip
+    sudo pip install django==1.6
+    sudo pip install sumatra
+    sudo apt-get install git
+    sudo pip install gitpython==0.3.7
+  \end{mlineshell}
+
+  \vspace{0.35cm}
+
+  ... or install in a virtualenv:
+\vspace{0.15cm}
+  \begin{mlineshell}
+    virtualenv smt_0.6.0
+    source smt_0.6.0/bin/activate
+    pip install django==1.6
+    pip install sumatra
+    pip install gitpython==0.3.7
+  \end{mlineshell}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Sumatra Installation (Version 0.6.0) II}
+
+  \vspace{0.2cm}
+  Manually test your setup:
+  \vspace{0.1cm}
+  \begin{mlineshell}
+    mkdir smt_test/
+    cd smt_test/
+    git init
+    smt init Test
+    echo "print 'hello'" >> hello_world.py
+    git add hello_world.py
+    git commit -am 'test'
+    smt run --main=hello_world.py
+    smtweb
+  \end{mlineshell}
+
+\end{frame}
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../smt_present"
+%%% End: 

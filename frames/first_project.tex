@@ -1,0 +1,45 @@
+\begin{frame}[fragile]{Setting up your first Sumatra project...}
+
+  \vspace{0.2cm}
+  % \vspace{0.1cm}
+  \begin{mlineshell}
+    mkdir new_project/
+    cd new_project/
+    git init
+    # configure for relative input paths and custon output
+    smt init PROJECT_NAME --input=. --datapath=MyData/
+    # show the configuration
+smt info
+  \end{mlineshell}
+\end{frame}
+
+\begin{frame}[fragile]{... and running the first tracked computation}
+
+  \begin{mlineshell}
+    echo "open('MyData/out1.dat','a').close()" > my_scrpt.py
+    git add my_scrpt.py
+    git commit -am 'added my_scrpt'
+    echo "a = 1
+          b = 2" > params.py 
+    # create some example input file
+    echo "123,456,789
+          987,654,321" > input1.dat
+    # input & parameter files need not be (shouldn't be?) 
+    # under version control
+    smt run --main=my_scrpt.py input1.dat params.py
+    # inspect new simulation record in the terminal...
+    smt list --long
+    # ... and the web interface
+    smtweb
+  \end{mlineshell}
+
+\end{frame}
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../smt_present"
+%%% End: 

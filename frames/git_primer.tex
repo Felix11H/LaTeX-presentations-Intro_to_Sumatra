@@ -1,0 +1,93 @@
+
+\begin{frame}[fragile]{Git Primer I}
+  \vspace{0.1cm}
+  Initialization:
+  \vspace{0.1cm}
+  \begin{mlineshell}
+    mkdir new_dir
+    cd new_dir
+    # new_dir is empty
+    ls -a                      
+    git init      
+    # after initialization now has .git folder
+    ls -a
+  \end{mlineshell}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Git Primer II}
+
+  Adding files and committing changes:
+  \begin{mlineshell}
+    # write "hello world" in a file
+    echo "hello world" >> hello_world.txt
+    # stages the file 
+    git add hello_world.txt
+    # commit (-a)ll staged changes with a (-m)essage 
+    git commit -am 'added hello world'
+    # show the commit in the log
+    git log
+  \end{mlineshell}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Git Primer III}
+  \vspace{0.2cm}
+  Going back to previous versions:
+  %\vspace{0.1cm}
+  \begin{mlineshell}
+    # first change the file
+    echo "goodbye world" >> hello_world.txt
+    # content has changed indeed 
+    more hello_world.txt
+    # commit the changes 
+    git commit hello_world.txt -m 'goodbye world'
+    # new commit appears in log
+    git log
+
+    # now use first 4 digits of commit ID shown in log
+    git checkout XXXX
+    # hello_world.txt was reverted to old version:
+    more hello_world.txt
+    # finlly, go back to latest commit
+    git checkout master
+  \end{mlineshell}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Git Primer IV}
+  
+  \vspace{0.2cm}
+  Other helpful commands:
+  %\vspace{0.1cm}
+  \begin{mlineshell}
+    # show the status of all files
+    git status -s
+  \end{mlineshell}
+
+  \vspace{0.4cm}
+
+  \textbf{Resources}
+  \vspace{0.15cm}
+  \begin{itemize}
+    \itemsep8pt
+    \item[-] Software Carpentry\\
+      \texttt{http://swcarpentry.github.io/git-novice/}
+    \item[-] GitHub, Bitbucket\\ 
+      \texttt{https://github.com/}\\
+      \texttt{http://bitbucket.com/}
+    \item[-] git documentation\\
+      \texttt{http://git-scm.com/doc}
+
+    \end{itemize}
+  %cheat sheets, software carpentry?
+
+\end{frame}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../smt_present"
+%%% End: 
