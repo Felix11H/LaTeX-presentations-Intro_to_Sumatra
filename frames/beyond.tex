@@ -1,31 +1,33 @@
-\begin{frame}[fragile]{}
- \vspace{-0.3cm}
- \Large Things Sumatra can't do
- 
- \vspace{0.15cm}
+\begin{frame}[fragile]{Things Sumatra can't do}
+  
+  \vspace{0.15cm}
   \large
   \begin{itemize}
     \itemsep6pt
     \item<1->[-] track parallel computations
     \item<2->[-] is not easily transferable to other systems or even
-      local directories
+    local directories ($\Rightarrow$ fixed by using Docker!)
     \item<3->[-] misses some implementations (rerun when code has been
-      changed, display code from web interface, ...)
+    changed, display code from web interface, ...)
   \end{itemize}
 
-\vspace{0.4cm}
-\onslide<4->
-\Large Alternatives to Sumatra
+  \vspace{0.4cm}
 
-\vspace{0.15cm}
+\end{frame}
+
+\begin{frame}[fragile]{Alternatives to Sumatra}
+
+  \vspace{0.15cm}
   \large
   \begin{itemize}
     \itemsep6pt
-    \item<5->[-] pypet\\
+    \item<1->[-] pypet\\
       \texttt{https://pypet.readthedocs.org/en/latest/}
-    \item<6->[-] Manual tracking of computations (file names,
+    \item<2->[-] ReciPy\\
+      \texttt{https://github.com/recipy/recipy}
+    \item<3->[-] Manual tracking of computations (file names,
       spreadsheets, ...)
-    \item<7->[-] custom tools?
+    \item<4->[-] custom tools?
   \end{itemize}
 
 \end{frame}
@@ -45,9 +47,3 @@
 
 
 % \end{frame}
-
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "../smt_present"
-%%% End: 
